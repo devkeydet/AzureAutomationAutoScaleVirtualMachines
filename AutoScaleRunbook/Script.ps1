@@ -92,7 +92,7 @@ foreach ($vmName in $virtualMachineNames)
 
 	# Uses a .net dll to make calls to get the metrics since Get-AzureRmMetric
 	# is not supported in Azure Government as of 5/2/2017.
-    $perfCounters = [PerfCounterHelperLibrary.PerfCounterHelper]::GetPerformanceCountersFromDiagnosticsStorage($DiagnosticsStorageConnectionString, 5, $vmName, $metricName)
+    $perfCounters = [PerfCounterHelperLibrary.PerfCounterHelper]::GetPerformanceCountersFromDiagnosticsStorage($DiagnosticsStorageConnectionString, $TimeRange, $vmName, $metricName)
 
     if($perfCounters -ne $null -and $perfCounters.Count -ge 0)
 	{
@@ -123,8 +123,8 @@ foreach ($vmName in $virtualMachineNames)
 
 $allServers | % { $_ | Format-Table -AutoSize}
 
-Write-Output "All Servers"
-$allServers | % {$_.Name}
+#Write-Output "All Servers"
+#$allServers | % {$_.Name}
 $numberServers = $allServers.Count
 Write-Output "Total number of servers: $numberServers"
 
