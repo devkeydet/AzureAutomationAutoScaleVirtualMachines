@@ -75,7 +75,6 @@ Add-Type -Path "C:\Modules\User\PerfCounterHelperLibrary\PerfCounterHelperLibrar
 
 Select-AzureRmSubscription -SubscriptionName $Subscription
 
-$storageConnectionString = $DiagnosticsStorageConnectionString
 $metricName = "\Processor(_Total)\% Processor Time"
 $allServers = @()
 $virtualMachineNames = $VirtualMachineNameString.Split(",")
@@ -93,7 +92,7 @@ foreach ($vmName in $virtualMachineNames)
 
 	# Uses a .net dll to make calls to get the metrics since Get-AzureRmMetric
 	# is not supported in Azure Government as of 5/2/2017.
-    $perfCounters = [PerfCounterHelperLibrary.PerfCounterHelper]::GetPerformanceCountersFromDiagnosticsStorage($storageConnectionString, 5, $vmName, $metricName)
+    $perfCounters = [PerfCounterHelperLibrary.PerfCounterHelper]::GetPerformanceCountersFromDiagnosticsStorage($DiagnosticsStorageConnectionString, 5, $vmName, $metricName)
 
     if($perfCounters -ne $null -and $perfCounters.Count -ge 0)
 	{
