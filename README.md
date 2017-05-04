@@ -1,6 +1,6 @@
 ## Overview
 This is adaptation of the 
-[Custom Auto Scaling for Azure ARM Virtual�Machines](
+[Custom Auto Scaling for Azure ARM Virtual Machines](
     https://shiningdragonsoftware.net/2016/11/10/custom-auto-scaling-for-azure-arm-virtual-machines/
 ) sample.
 The goal of the adaptation is to get the original sample working in 
@@ -8,12 +8,12 @@ The goal of the adaptation is to get the original sample working in
     https://azure.microsoft.com/en-us/overview/clouds/government/
 ).
 The
-[Custom Auto Scaling for Azure ARM Virtual�Machines](
+[Custom Auto Scaling for Azure ARM Virtual Machines](
     https://shiningdragonsoftware.net/2016/11/10/custom-auto-scaling-for-azure-arm-virtual-machines/
 ) 
 blog post does a good job explaining the scenarios when one would want to use this approach.
 Unfortunately, the
-[Custom Auto Scaling for Azure ARM Virtual�Machines](
+[Custom Auto Scaling for Azure ARM Virtual Machines](
     https://shiningdragonsoftware.net/2016/11/10/custom-auto-scaling-for-azure-arm-virtual-machines/
 ) 
 sample uses the
